@@ -8,6 +8,8 @@ var blue = [1, 79, 131];
 var yellow = [249, 223, 60];
 var orange = [255, 199, 102]; // [243, 119, 107];
 
+var black = [0,0,0];
+
 var openness = [];
 var conscientiousness = [];
 var agreeableness = [];
@@ -43,7 +45,6 @@ function basicLineChart(color) {
   var lineChartData = {
     datasets: [
       {
-
         label: "My First dataset",
         fillColor: makeRGB(color, 0.2),
         strokeColor: makeRGB(color, 1),
@@ -163,7 +164,32 @@ function addChart(anchor, data) {
       scaleStepWidth: 10,
       scaleStartValue: 0,
       scaleShowVerticalLines: false
-    });
+    },{options: {
+        legend: {
+            labels: {
+                fontColor: "white",
+                fontSize: 18
+            }
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    fontColor: "white",
+                    fontSize: 18,
+                    stepSize: 1,
+                    beginAtZero: true
+                }
+            }],
+            xAxes: [{
+                ticks: {
+                    fontColor: "white",
+                    fontSize: 14,
+                    stepSize: 1,
+                    beginAtZero: true
+                }
+            }]
+        }
+    }});
   } else {
     var chart = new Chart(ctx).Bar(data, {
       scaleOverride: true,
@@ -318,45 +344,45 @@ function readPersonaData() {
 function opennessTrait(e) {
   var select = document.getElementById('openness-select');
   if (select.value === 'combined') {
-    addChart('openness', buildLineData(openness, orange));
+    addChart('openness', buildLineData(openness, black));
   } else {
-    addChart('openness', buildLineData(subfactors[select.value], orange));
+    addChart('openness', buildLineData(subfactors[select.value], black));
   }
 }
 
 function conscientiousnessTrait(e) {
   var select = document.getElementById('conscientiousness-select');
   if (select.value === 'combined') {
-    addChart('conscientiousness', buildLineData(conscientiousness, orange));
+    addChart('conscientiousness', buildLineData(conscientiousness, black));
   } else {
-    addChart('conscientiousness', buildLineData(subfactors[select.value], orange));
+    addChart('conscientiousness', buildLineData(subfactors[select.value], black));
   }
 }
 
 function agreeablenessTrait(e) {
   var select = document.getElementById('agreeableness-select');
   if (select.value === 'combined') {
-    addChart('agreeableness', buildLineData(agreeableness, orange));
+    addChart('agreeableness', buildLineData(agreeableness, black));
   } else {
-    addChart('agreeableness', buildLineData(subfactors[select.value], orange));
+    addChart('agreeableness', buildLineData(subfactors[select.value], black));
   }
 }
 
 function extraversionTrait(e) {
   var select = document.getElementById('extraversion-select');
   if (select.value === 'combined') {
-    addChart('extraversion', buildLineData(extraversion, orange));
+    addChart('extraversion', buildLineData(extraversion, black));
   } else {
-    addChart('extraversion', buildLineData(subfactors[select.value], orange));
+    addChart('extraversion', buildLineData(subfactors[select.value], black));
   }
 }
 
 function neuroticismTrait(e) {
   var select = document.getElementById('neuroticism-select');
   if (select.value === 'combined') {
-    addChart('neuroticism', buildLineData(neuroticism, orange));
+    addChart('neuroticism', buildLineData(neuroticism, black));
   } else {
-    addChart('neuroticism', buildLineData(subfactors[select.value], orange));
+    addChart('neuroticism', buildLineData(subfactors[select.value], black));
   }
 }
 
