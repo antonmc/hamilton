@@ -1,6 +1,6 @@
 [{
     "name": "Alexander Hamilton",
-    "key": "hamilton",
+    "key": "HAMILTON",
     "born": "",
     "died": "",
     "placeOfBirth": "",
@@ -14,7 +14,7 @@
   },
   {
     "name": "Aaron Burr",
-    "key": "burr",
+    "key": "BURR",
     "born": "",
     "died": "",
     "placeOfBirth": "",
@@ -28,7 +28,7 @@
   },
   {
     "name": "Eliza Schuyler Hamilton",
-    "key": "eliza",
+    "key": "ELIZA",
     "born": "",
     "died": "",
     "placeOfBirth": "",
@@ -42,7 +42,7 @@
   },
   {
     "name": "Jefferson",
-    "key": "jefferson",
+    "key": "JEFFERSON",
     "born": "",
     "died": "",
     "placeOfBirth": "",
@@ -56,7 +56,7 @@
   },
   {
     "name": "Hercules Mulligan",
-    "key": "mulligan",
+    "key": "MULLIGAN",
     "born": "",
     "died": "",
     "placeOfBirth": "",
@@ -70,7 +70,7 @@
   },
   {
     "name": "George Washington",
-    "key": "washington",
+    "key": "WASHINGTON",
     "born": "",
     "died": "",
     "placeOfBirth": "",
