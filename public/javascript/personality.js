@@ -45,8 +45,29 @@ function readInsightData(key) {
         if (person.character === key) {
 
           console.log('found ' + key);
-        }
 
+          person.consumption_preferences.forEach( function(preference){
+
+            if(preference.name === "Purchasing Preferences"){
+
+              preference.consumption_preferences.forEach(function(consumption){
+                if( consumption.score = 1 ){
+
+                  var consumptionList = document.getElementById("consumptionList");
+
+                  var li = document.createElement('li');
+                  li.innerHTML = consumption.name;
+                  li.className = 'assessmentList';
+
+                  consumptionList.appendChild(li);
+
+                  console.log(consumption.name)
+                }
+
+              })
+            }
+          })
+        }
       })
     }
   };
@@ -72,6 +93,13 @@ function readPersonaData(pdata) {
       console.log('found ' + persona);
 
       readInsightData(character.key);
+
+      var characterName = document.getElementById("characterName");
+      characterName.innerHTML = persona;
+
+      var characterImage = document.getElementById("characterImage");
+      characterImage.src = "images/svg/" + character.image;
+
 
       /* show name */
 
